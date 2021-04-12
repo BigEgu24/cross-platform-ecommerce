@@ -1,14 +1,34 @@
 {
-  "name": "react-ecommerce",
+  "name": "crossplatform-ecommerce",
+  "private": true,
   "version": "1.0.0",
+  "workspaces": [
+    "backend/*",
+    "frontend/*"
+  ],
   "description": "Full Stack Crossplatform Application Using Yarn Workspaces, Webpack, React and React Native",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cd ./frontend/web && yarn start",
+    "dev-app": "concurrently \"cd ./frontend/app && yarn android && yarn ios\"",
+    "android": "cd ./frontend/app && yarn android",
+    "site": "nodemon ./backend/site.js",
+    "api": "nodemon ./backend/api.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "nodemon": "^2.0.7"
+    "concurrently": "^6.0.1",
+    "express": "^4.17.1",
+    "hermes-engine": "0.5.2-rc1",
+    "nodemon": "^2.0.7",
+    "react": "16.13.1",
+    "react-native": "0.63.2",
+    "wait-on": "^5.3.0"
+  },
+  "devDependencies": {
+    "@react-native-community/eslint-config": "^0.0.5",
+    "@types/react": "^16.9.17",
+    "@types/react-native": "^0.60.22"
   }
 }
