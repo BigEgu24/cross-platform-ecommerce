@@ -11,6 +11,10 @@
 # production
 /build
 
+# ios workspaces
+app.xcodeproj
+app.xcworkspace
+
 # misc
 .DS_Store
 .env.local

@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 
 app.get("/api/posts", (req, res) => {
-    console.log("hello")
+    
     res.json({
         success: "true"
     })
