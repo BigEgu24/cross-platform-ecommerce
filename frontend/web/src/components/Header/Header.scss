@@ -1,0 +1,18 @@
+header{
+    height: 75px;
+    background-color: darkblue;
+    .logo{
+        a{
+            color: #fff;
+        }
+    }
+    .nav{
+        li{
+            margin-inline-start: 1rem;
+            a{
+                color: #fff;
+                font-size: 0.85rem;
+            }
+        }
+    }
+}

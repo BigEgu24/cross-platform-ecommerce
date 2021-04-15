@@ -8,6 +8,12 @@
 
 ✅ Shared API
 
+🛠️ Shared useContext
+
+🎨 Designed In Figma
+
+💳 Stripe Payments
+
 
 # App
 
@@ -24,6 +30,12 @@
 
 ⚛️ React
 
+⚛️ React Native Web
+
 ✅ Express
 
 🎨 SASS enabled
+
+# API
+
+✅ Express
