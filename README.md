@@ -19,6 +19,8 @@
 
 ⚛️ React Native
 
+🐬 MySQL
+
 🚀 Hermes Enabled
 
 🛠️ Min SDK Version 16.00 - Android

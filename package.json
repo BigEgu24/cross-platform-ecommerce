@@ -9,9 +9,10 @@
   "description": "Full Stack Crossplatform Application Using Yarn Workspaces, Webpack, React and React Native",
   "scripts": {
     "api": "nodemon ./backend/api.js",
-    "dev-app": "concurrently \"cd ./frontend/app && yarn android && yarn ios\"",
+    "dev-app": "concurrently \"cd ./frontend/app && yarn android\"",
     "dev-web": "concurrently \"cd ./frontend/web && yarn start\"",
-    "start": "concurrently \"yarn dev-app && yarn dev-web\""
+    "start": "concurrently \"yarn dev-app && yarn dev-web\"",
+    "clean": "rm -rf node_modules && rm -rf frontend/*/node_modules"
   },
   "keywords": [],
   "author": "",
@@ -22,16 +23,21 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "hermes-engine": "0.5.2-rc1",
     "mysql": "^2.18.1",
     "nodemon": "^2.0.7",
-    "react": "16.13.1",
-    "react-native": "0.63.2",
+    "react": "17.0.1",
+    "react-native": "0.64.0",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "^2.0.0",
+    "react-native-svg": "^6.3.1",
+    "react-native-svg-charts": "^5.1.1",
+    "d3-array": "^1.2.0",
+    "d3-scale": "^1.0.6",
+    "d3-shape": "^1.0.6",
     "wait-on": "^5.3.0"
   },
   "devDependencies": {
-    "@react-native-community/eslint-config": "^0.0.5",
-    "@types/react": "^16.9.17",
-    "@types/react-native": "^0.60.22"
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/react-native": "0.64.0"
   }
 }
