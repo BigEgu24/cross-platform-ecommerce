@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.2](https://github.com/BigEgu24/cross-platform-ecommerce/compare/v1.1.1...v1.1.2) (2021-04-22)
+
+
+### Bug Fixes
+
+* ios pod install -Reanimated ([f9fc258](https://github.com/BigEgu24/cross-platform-ecommerce/commit/f9fc25816a111571fa89c80405a7341d2da6a288))
+
 ### [1.1.1](https://github.com/BigEgu24/cross-platform-ecommerce/compare/v1.1.0...v1.1.1) (2021-04-22)
 
 ## 1.1.0 (2021-04-21)
