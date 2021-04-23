@@ -14,6 +14,7 @@ const db = mysql.createConnection({
 // Allow Access to API
 app.use(cors())
 
+// Get All The Products
 app.get("/api/products", (req, res) => {
     db.query("SELECT * FROM products", (err, result) => {
         if(err){
@@ -22,6 +23,17 @@ app.get("/api/products", (req, res) => {
             res.json({
                 products: result
             })
+        }
+    })
+})
+
+// Insert Product
+app.get("/api/products/insert", (req, res) => {
+    db.query("INSERT INTO products (id, title) VALUES ('5', 'hello')", (err, result) => {
+        if(err){
+            console.log(err)
+        }else{
+            res.send("Product Saved!")
         }
     })
 })
