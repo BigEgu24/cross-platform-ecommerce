@@ -1,4 +1,4 @@
-import Graph from '@wow/shared/dist/Graph/Graph';
+import Graph from '@wow/shared/Graph/Graph';
 import React, {Fragment} from 'react';
  import {
    SafeAreaView,

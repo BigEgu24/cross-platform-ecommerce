@@ -5,7 +5,7 @@ export default function Card() {
     console.log(Platform.OS)
     return (
         <View>
-            <Text>Card!!</Text>
+            <Text>Card!</Text>
         </View>
     )
 }

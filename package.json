@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
-    "@types/react-native": "^0.60.22",
+    "@types/react-native": "0.64.0",
     "standard-version": "^9.2.0"
   }
 }
