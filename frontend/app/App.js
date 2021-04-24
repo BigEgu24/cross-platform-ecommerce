@@ -1,3 +1,4 @@
+import Graph from '@wow/shared/dist/Graph/Graph';
 import React, {Fragment} from 'react';
  import {
    SafeAreaView,
@@ -15,7 +16,6 @@ import React, {Fragment} from 'react';
    DebugInstructions,
    ReloadInstructions,
  } from 'react-native/Libraries/NewAppScreen';
-import Example from './components/Example/Example';
  
  const App = () => {
   const isHermes = () => !!global.HermesInternal;
@@ -24,9 +24,10 @@ import Example from './components/Example/Example';
   } else {
     console.log("Hermes is enabled");
   }
+  
    return (
      <ScrollView>
-       <Example />
+       <Graph />
      </ScrollView>
    );
  };

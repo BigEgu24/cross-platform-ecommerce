@@ -1,35 +1,25 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.scss";
-import Header from "./components/Header/Header";
-import {View, Text} from "react-native";
-import Card from "@app/shared/dist/Card/Card";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import axios from "axios";
-import Homepage from "./pages/Homepage/Homepage";
+import logo from './logo.svg';
+import './App.scss';
 
-const App = () => {
-  const getData = async(url) => {
-    const result = await axios.get(url);
-    return result.data;
-  }
-  const postData = () => {
-    
-  }
-  const getProducts = async() => {
-    const URL = "http://localhost:3000/api/products";
-    const products = await getData(URL);
-    const myProducts = products.products;
-    console.log(myProducts)
-  }
+function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" render={() => {
-          return <Homepage />;
-        }} />
-      </Switch>
-    </BrowserRouter>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
   );
 }
+
 export default App;

@@ -1,14 +1,1 @@
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = index;
-
-var _react = _interopRequireDefault(require("react"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function index() {
-  return /*#__PURE__*/_react["default"].createElement("div", null, "hello");
-}
+"use strict";var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.Card=void 0;var _react=_interopRequireDefault(require("react"));var _reactNative=require("react-native");var _this=void 0,_jsxFileName="/Users/bigegu24/Desktop/react-crossplatform-ecommerce/frontend/shared/src/index.js";var Card=function Card(){console.log(_reactNative.Platform.OS);return _react["default"].createElement(_reactNative.View,{__self:_this,__source:{fileName:_jsxFileName,lineNumber:7,columnNumber:9}},_react["default"].createElement(_reactNative.Text,{__self:_this,__source:{fileName:_jsxFileName,lineNumber:8,columnNumber:13}},"Card!!"));};exports.Card=Card;

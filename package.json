@@ -19,7 +19,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@app/shared": "1.0.0",
+    "@wow/shared": "1.0.0",
     "concurrently": "^6.0.1",
     "cors": "^2.8.5",
     "d3-array": "^1.2.0",
@@ -39,7 +39,7 @@
   },
   "devDependencies": {
     "@react-native-community/eslint-config": "^2.0.0",
-    "@types/react-native": "0.64.0",
+    "@types/react-native": "^0.60.22",
     "standard-version": "^9.2.0"
   }
 }

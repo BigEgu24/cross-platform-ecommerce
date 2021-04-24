@@ -1,20 +1,24 @@
 {
-  "name": "@app/shared",
+  "name": "@wow/shared",
   "private": true,
   "version": "1.0.0",
+  "main": "dist/index.js",
   "description": "",
   "scripts": {
     "babel": "babel src/ -d dist --watch"
   },
   "dependencies": {
     "react": "17.0.1",
-    "react-native": "0.64.0"
+    "react-native": "0.64.0",
+    "react-native-gesture-handler": "^1.10.3",
+    "react-native-reanimated": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.4.0",
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-syntax-jsx": "^7.12.13",
+    "@babel/plugin-transform-react-jsx": "^7.13.12",
     "@babel/preset-env": "^7.4.2",
     "@babel/preset-react": "^7.0.0",
     "@types/react": "^16.9.17",
