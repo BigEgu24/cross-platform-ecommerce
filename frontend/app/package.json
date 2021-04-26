@@ -5,24 +5,25 @@
   "scripts": {
     "android": "node ../../node_modules/react-native/local-cli/cli.js run-android",
     "ios": "react-native run-ios",
-    "start": "node ../../node_modules/react-native/local-cli/cli.js start",
+    "start": "node ../../node_modules/react-native/local-cli/cli.js start --reset-cache",
     "test": "jest",
     "lint": "eslint ."
   },
   "dependencies": {
+    "@wow/shared": "1.0.0",
     "hermes-engine": "^0.7.2",
     "react": "17.0.1",
     "react-native": "0.64.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.0.0",
-    "@wow/shared": "1.0.0"
+    "react-router-native": "^5.2.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.13.16",
-    "@babel/runtime": "^7.13.17",
-    "@react-native-community/eslint-config": "^2.0.0",
     "@wow/shared": "1.0.0",
+    "@babel/core": "^7.13.16",
+    "@react-native-community/eslint-config": "^2.0.0",
     "babel-jest": "^26.6.3",
+    "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^7.24.0",
     "jest": "^26.6.3",
     "metro-react-native-babel-preset": "^0.66.0",
@@ -30,15 +31,5 @@
   },
   "jest": {
     "preset": "react-native"
-  },
-  "workspaces": {
-    "nohoist": [
-      "react-native",
-      "react-native/**",
-      "react",
-      "react/**",
-      "react-native-reanimated",
-      "react-native-reanimated/**"
-    ]
   }
 }

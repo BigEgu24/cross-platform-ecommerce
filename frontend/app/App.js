@@ -1,22 +1,12 @@
-import Graph from '@wow/shared/Graph/Graph';
 import React, {Fragment} from 'react';
- import {
-   SafeAreaView,
-   StyleSheet,
-   ScrollView,
-   View,
-   Text,
-   StatusBar,
- } from 'react-native';
+import {
+  View,
+  Text,
+} from 'react-native';
  
- import {
-   Header,
-   LearnMoreLinks,
-   Colors,
-   DebugInstructions,
-   ReloadInstructions,
- } from 'react-native/Libraries/NewAppScreen';
- 
+ import Routes from "@wow/shared/Routes/Routes";
+ import Graph from "@wow/shared/Graph/Graph";
+
  const App = () => {
   const isHermes = () => !!global.HermesInternal;
   if (!isHermes) {
@@ -24,29 +14,23 @@ import React, {Fragment} from 'react';
   } else {
     console.log("Hermes is enabled");
   }
-  
-   return (
-     <ScrollView>
-       <Graph />
-     </ScrollView>
-   );
+  const routes = [
+    {
+      path: "/",
+      render: <View><Text>Homepage!!</Text></View>
+    },
+    {
+      path: "/about",
+      render: <View><Text>About!</Text></View>
+    }
+  ];
+  return (
+    <>
+      <Graph />
+      {/* <Routes Routes={routes}/> */}
+    </>
+  );
+  //  return <Graph />;
  };
- 
- const styles = StyleSheet.create({
-   scrollView: {
-     backgroundColor: Colors.lighter,
-   },
-   engine: {
-     position: 'absolute',
-     right: 0,
-   },
-   body: {
-     backgroundColor: Colors.white,
-   },
-   container: {
-     marginTop: 32,
-     paddingHorizontal: 24,
-   }
- });
  
  export default App;

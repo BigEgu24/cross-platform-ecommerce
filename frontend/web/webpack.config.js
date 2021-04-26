@@ -13,6 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, 'build'),
     filename: 'app.bundle.js'
   },
+  devServer: {
+      historyApiFallback:{
+        index: 'build/index.html'
+      },
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -22,6 +27,10 @@ module.exports = {
   ],
   module: {
     rules: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      },
       {
         test: /\.(js|jsx)$/,
         use: {
@@ -35,6 +44,20 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+            },
+          },
+        ],
+      }
     ],
   },
   resolve: {

@@ -1,0 +1,26 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* These styles make the body full-height */
+html, body { 
+    height: 100%; 
+    width: 100%;
+}
+/* These styles disable body scrolling if you are using <ScrollView> */
+body { 
+    overflow: hidden; 
+}
+/* These styles make the root element full-height */
+#root { 
+    display: flex;
+	height: 100%;
+    width: 100%;
+    justify-content: center;
+}
+.graph{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

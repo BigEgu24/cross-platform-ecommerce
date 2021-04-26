@@ -12,9 +12,9 @@ target 'app' do
     :hermes_enabled => true
   )
 
-  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+  pod 'RNReanimated', :path => '../../../node_modules/react-native-reanimated'
 
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'RNGestureHandler', :path => '../../../node_modules/react-native-gesture-handler'
 
   target 'appTests' do
     inherit! :complete

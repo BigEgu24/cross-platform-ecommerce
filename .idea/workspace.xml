@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ca637bf3-734d-4ef3-bb1c-6353acbd910b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/frontend/app/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/babel.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/ios/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/ios/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/metro.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/metro.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/app/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/.babelrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/Button/.watchmanconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/Button/Button.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/dist/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/Context/app-context.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/dist/Context/app-context.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/Graph/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/dist/Graph/Graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/dist/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/BatchedBridge.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/Devtools.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/LaunchScreen.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/globals.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/legacy-properties.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/experimental.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/global.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/jsx-dev-runtime.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/jsx-runtime.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/node_modules/@types/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react-native/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/global.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/jsx-dev-runtime.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/jsx-runtime.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/@types/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/src/configs/hmr.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/src/configs/lazy-imports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/src/configs/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/src/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/node_modules/metro-react-native-babel-preset/src/passthrough-syntax-plugins.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/src/Card/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/src/Card/Card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/shared/src/Graph/Graph.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/shared/src/Graph/Graph.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/web/webpack.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/yarn" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/web/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1riCe8FSGz7oAFWgqW0gCiFfYV1" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ca637bf3-734d-4ef3-bb1c-6353acbd910b" name="Default Changelist" comment="" />
+      <created>1619449615192</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1619449615192</updated>
+    </task>
+    <servers />
+  </component>
+</project>
