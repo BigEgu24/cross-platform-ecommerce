@@ -1,10 +1,11 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 require("@babel/polyfill");
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
   entry: [
     '@babel/polyfill', 
     './src/index.js'
@@ -22,14 +23,35 @@ module.exports = {
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './public/index.html',
+      favicon: './public/favicon.ico'
     }),
-    new webpack.DefinePlugin({ process: { env: {} } })
+    new webpack.DefinePlugin({ process: { env: {} } }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "src/images",
+          to: "images",
+        },
+        {
+          from: "public/manifest.json",
+          to: "",
+        }
+      ],
+    })
   ],
   module: {
     rules: [
       {
         test: /\.json$/,
         loader: 'json-loader'
+      },
+      {
+        test: /\.(png|svg|jpg|jpe?g|gif|ico)$/,
+        loader: 'file-loader',
+        options: {
+          name: '[path][name].[ext]',
+          outputPath: 'images'
+        },
       },
       {
         test: /\.(js|jsx)$/,

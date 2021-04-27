@@ -2,7 +2,7 @@ const path = require('path')
 
 const getConfig = async () => ({
   resolver: {
-    useWatchman: true,
+    useWatchman: true
   },
   transformer: {
     getTransformOptions: async () => ({
@@ -15,10 +15,8 @@ const getConfig = async () => ({
   watchFolders: [
     path.resolve(__dirname), 
     path.resolve(__dirname, "../../node_modules"),
-    path.resolve(__dirname, "../../node_modules/@wow/shared"),
-  ],
-  /* general options */
-  watch: true
-  
+    path.resolve(__dirname, "../../node_modules/metro"),
+    path.resolve(__dirname, "../../node_modules/@wow/shared")
+  ]
 });
 module.exports = getConfig();

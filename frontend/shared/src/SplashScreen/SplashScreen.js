@@ -3,9 +3,16 @@ import Animated, {
   withSpring,
   useAnimatedStyle,
   Easing,
-  withTiming,
+  withTiming
 } from 'react-native-reanimated';
-import {View, Text, StyleSheet} from 'react-native';
+import {
+  View, 
+  Text, 
+  StyleSheet,
+  StatusBar,
+  Dimensions,
+  Platform
+} from 'react-native';
 import React, {useEffect} from 'react';
 
 function getColor() {
@@ -35,7 +42,7 @@ function hexToRGB(h) {
   return 'rgb(' + +r + ',' + +g + ',' + +b + ')';
 }
 
-export default function Graph(props) {
+export default function SplashScreen(props) {
   const color = useSharedValue(hexToRGB(getColor()));
   const style = useAnimatedStyle(() => {
     return {
@@ -58,10 +65,14 @@ export default function Graph(props) {
     </View>
   );
 }
+const windowHeight = Dimensions.get('window').height;
+
 const styles = StyleSheet.create({
   container: {
-    width: '100%',
-    height: '100%',
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: Platform.OS==="web" ? "100%" : windowHeight,
     backgroundColor: '#000'
   },
   text:{

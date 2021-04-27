@@ -2,7 +2,7 @@
 
 # Project Specs
 
-✅ Yarn Workspaces
+🧶 Yarn Workspaces
 
 ✅ Shared React Native Web Components
 
@@ -41,3 +41,5 @@
 # API
 
 ✅ Express
+
+📝 CRUD
