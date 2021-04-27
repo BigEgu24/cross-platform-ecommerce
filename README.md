@@ -1,5 +1,7 @@
 # Cross-Platform Ecommerce Application
 
+(https://octodex.github.com/images/yaktocat.png)
+
 # Project Specs
 
 🧶 Yarn Workspaces
