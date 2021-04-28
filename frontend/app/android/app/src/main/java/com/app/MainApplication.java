@@ -4,7 +4,6 @@ import android.app.Application;
 import android.content.Context;
 import com.facebook.react.PackageList;
 import com.facebook.react.ReactApplication;
-import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactNativeHost;
@@ -35,8 +34,9 @@ public class MainApplication extends Application implements ReactApplication {
 
         @Override
         protected String getJSMainModuleName() {
-          return "index";
+          return "frontend/app/index";
         }
+
         @Override
         protected JSIModulePackage getJSIModulePackage() {
            return new ReanimatedJSIModulePackage(); // <- add
@@ -62,6 +62,7 @@ public class MainApplication extends Application implements ReactApplication {
    * @param context
    * @param reactInstanceManager
    */
+  
   private static void initializeFlipper(
       Context context, ReactInstanceManager reactInstanceManager) {
     if (BuildConfig.DEBUG) {

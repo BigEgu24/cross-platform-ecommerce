@@ -1,81 +1,83 @@
+import { View, Image, StyleSheet, Text } from 'react-native';
 import Animated, {
-  useSharedValue,
-  withSpring,
-  useAnimatedStyle,
-  Easing,
-  withTiming
+  withRepeat,  
+  useSharedValue, 
+  interpolate, 
+  useAnimatedStyle, 
+  useDerivedValue, 
+  withTiming 
 } from 'react-native-reanimated';
-import {
-  View, 
-  Text, 
-  StyleSheet,
-  StatusBar,
-  Dimensions,
-  Platform
-} from 'react-native';
 import React, {useEffect} from 'react';
+import { useAppContext } from '@wow/shared/Context/app-context';
 
-function getColor() {
-  return (
-    '#' +
-    ('000000' + Math.floor(Math.random() * 16777215).toString(16)).slice(-6)
-  );
-}
-function hexToRGB(h) {
-  let r = 0,
-    g = 0,
-    b = 0;
 
-  // 3 digits
-  if (h.length == 4) {
-    r = '0x' + h[1] + h[1];
-    g = '0x' + h[2] + h[2];
-    b = '0x' + h[3] + h[3];
+const SplashScreen = () => {
+  const {values, functions} = useAppContext();
+  const {splash} = values;
+  const {setSplash} = functions;
 
-    // 6 digits
-  } else if (h.length == 7) {
-    r = '0x' + h[1] + h[2];
-    g = '0x' + h[3] + h[4];
-    b = '0x' + h[5] + h[6];
+  const animation = useSharedValue(0)
+
+  const rotation = useDerivedValue(() => {
+
+    return interpolate(animation.value,
+      [0,200],
+      [0,200])
+  })
+
+  const animationStyle = useAnimatedStyle(() => {
+    return{
+
+      transform:[
+        {
+          translateY: -rotation.value
+        }
+      ]
+    }
+  })
+  const startAnimation = () => {
+    animation.value = withRepeat(
+    withTiming(70, { duration: 1100 }, (finished, currentValue) => {
+      // if (finished) {
+      //   console.log('current withRepeat value is ' + currentValue);
+      // } else {
+      //   console.log('inner animation cancelled');
+      // }
+    }),
+    10,
+    true,
+    (finished) => {
+      if(finished === true){
+        setSplash(!splash)
+      }
+    }
+    )
   }
-
-  return 'rgb(' + +r + ',' + +g + ',' + +b + ')';
-}
-
-export default function SplashScreen(props) {
-  const color = useSharedValue(hexToRGB(getColor()));
-  const style = useAnimatedStyle(() => {
-    return {
-      backgroundColor: withTiming(color.value, {
-        duration: 500,
-        easing: Easing.bezier(0.5, 0.01, 0, 1),
-      }),
-    };
-  });
   useEffect(() => {
-    setInterval(() => {
-      color.value = hexToRGB(getColor())
-    }, 1000);
-  },[])
+    startAnimation()
+  }, [])
   
+  const logo = { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" };
   return (
     <View style={styles.container}>
-      {/* <Animated.View style={[{height: '100%', width: '100%'}, style]} /> */}
-      <Text style={styles.text}>Logo!</Text>
+      <Animated.View style={animationStyle}>
+        <Image source={logo} style={[styles.logo]}/>
+      </Animated.View>
+      <Text style={{ color: '#fff' }}>{splash ? "Splash" : "Homepage"}</Text>
     </View>
   );
 }
-const windowHeight = Dimensions.get('window').height;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: Platform.OS==="web" ? "100%" : windowHeight,
     backgroundColor: '#000'
   },
-  text:{
-    color: '#fff'
+  logo: {
+    width: 100,
+    height: 100
   }
 });
+export default SplashScreen;

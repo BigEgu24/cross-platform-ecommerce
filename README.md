@@ -1,5 +1,7 @@
 # Cross-Platform Ecommerce Application
 
+![Image of Yaktocat](/gifs/code.gif)
+
 # Project Specs
 
 🧶 Yarn Workspaces

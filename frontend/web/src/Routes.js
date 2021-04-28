@@ -4,7 +4,7 @@ import {View, Text} from "react-native";
 export const routes = [
     {
       path: "/",
-      render: <View><Text>Homepage!</Text></View>
+      render: <View><Text>Home!</Text></View>
     },
     {
       path: "/about",

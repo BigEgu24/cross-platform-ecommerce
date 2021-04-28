@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 
 const AppContext = React.createContext();
 
@@ -7,15 +7,15 @@ export function useAppContext() {
 }
 
 export const AppProvider = (props) => {
-    const [number, setNumber] = useState(1);
-
+    const [splash, setSplash] = useState(true);
+    
     return(
         <AppContext.Provider value={{
-            values: {
-                number
-            },
             functions: {
-                setNumber
+                setSplash
+            },
+            values: {
+                splash
             }
         }}>
             {props.children}

@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "babel": "babel ./src --out-dir dist --watch"
+    "babel": "rm -rf dist && babel ./src --out-dir dist --copy-files --watch"
   },
   "keywords": [],
   "author": "",

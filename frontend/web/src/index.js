@@ -1,8 +1,14 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-import App from "./App";
+import Index from '@wow/shared/ProviderWrapper';
+import {routes} from "./Routes.js";
+import "./App.scss";
 
-AppRegistry.registerComponent('App', () => App);
+const ProviderWrapper = () => {
+    return <Index routes={routes}/>
+}
+
+AppRegistry.registerComponent('App', () => ProviderWrapper);
 AppRegistry.runApplication('App', { 
     rootTag: document.getElementById('root') 
 });
