@@ -1,1 +1,23 @@
-var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.default=Routes;var _react=_interopRequireDefault(require("react"));var _reactNative=require("react-native");var _index=require("../Router/index");var _jsxFileName="/Users/bigegu24/Desktop/react-crossplatform-ecommerce/frontend/shared/src/Routes/Routes.js";function Routes(props){var _this=this;var myRoutes=props.Routes;return _react.default.createElement(_index.Router,{__self:this,__source:{fileName:_jsxFileName,lineNumber:8,columnNumber:9}},_react.default.createElement(_index.Switch,{__self:this,__source:{fileName:_jsxFileName,lineNumber:9,columnNumber:13}},myRoutes.map(function(route,index){return _react.default.createElement(_index.Route,{path:route.path,exact:true,render:function render(){return route.render;},key:index,__self:_this,__source:{fileName:_jsxFileName,lineNumber:12,columnNumber:32}});})));}
+import React from 'react';
+import { View, Platform, StatusBar, StyleSheet } from 'react-native';
+import { Router, Route, Switch } from "../Router/index";
+export default function Routes(props) {
+  const myRoutes = props.Routes;
+  return /*#__PURE__*/React.createElement(View, {
+    style: styles.container
+  }, /*#__PURE__*/React.createElement(Router, null, /*#__PURE__*/React.createElement(Switch, null, myRoutes.map((route, index) => {
+    return /*#__PURE__*/React.createElement(Route, {
+      path: route.path,
+      exact: true,
+      render: () => {
+        return route.render;
+      },
+      key: index
+    });
+  }))));
+}
+const styles = StyleSheet.create({
+  container: {
+    paddingTop: Platform.OS === "web" ? 0 : StatusBar.currentHeight
+  }
+});

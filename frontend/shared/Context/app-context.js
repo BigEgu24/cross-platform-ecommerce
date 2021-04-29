@@ -1,1 +1,18 @@
-var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");var _interopRequireWildcard=require("@babel/runtime/helpers/interopRequireWildcard");Object.defineProperty(exports,"__esModule",{value:true});exports.useAppContext=useAppContext;exports.AppProvider=void 0;var _slicedToArray2=_interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));var _react=_interopRequireWildcard(require("react"));var _this=this,_jsxFileName="/Users/bigegu24/Desktop/react-crossplatform-ecommerce/frontend/shared/src/Context/app-context.js";var AppContext=_react.default.createContext();function useAppContext(){return(0,_react.useContext)(AppContext);}var AppProvider=function AppProvider(props){var _useState=(0,_react.useState)(true),_useState2=(0,_slicedToArray2.default)(_useState,2),splash=_useState2[0],setSplash=_useState2[1];return _react.default.createElement(AppContext.Provider,{value:{functions:{setSplash:setSplash},values:{splash:splash}},__self:_this,__source:{fileName:_jsxFileName,lineNumber:13,columnNumber:9}},props.children);};exports.AppProvider=AppProvider;
+import React, { useState, useContext, useEffect } from "react";
+const AppContext = /*#__PURE__*/React.createContext();
+export function useAppContext() {
+  return useContext(AppContext);
+}
+export const AppProvider = props => {
+  const [splash, setSplash] = useState(true);
+  return /*#__PURE__*/React.createElement(AppContext.Provider, {
+    value: {
+      functions: {
+        setSplash
+      },
+      values: {
+        splash
+      }
+    }
+  }, props.children);
+};

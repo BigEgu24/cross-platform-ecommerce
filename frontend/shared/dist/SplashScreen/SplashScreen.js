@@ -1,5 +1,5 @@
 import { View, Image, StyleSheet, Text } from 'react-native';
-import Animated, { withRepeat, useSharedValue, interpolate, useAnimatedStyle, useDerivedValue, withTiming, runOnJS } from 'react-native-reanimated';
+import Animated, { withRepeat, useSharedValue, interpolate, useAnimatedStyle, useDerivedValue, withTiming, runOnJS, createWorklet } from 'react-native-reanimated';
 import React, { useEffect } from 'react';
 import { useAppContext } from '../Context/app-context';
 
@@ -26,14 +26,18 @@ const SplashScreen = () => {
     };
   });
 
-  const startAnimation = () => {
+  function callback(text) {
+    console.log('Running on the RN thread', text);
+    setSplash(!splash);
+  }
+
+  const startAnimation = prop => {
+    "worklet";
+
     animation.value = withRepeat(withTiming(35, {
-      duration: 1100
-    }), -1, false, finished => {
-      // const resultStr = finished
-      // ? 'All repeats are completed'
-      // : 'withRepeat cancelled';
-      console.log(finished);
+      duration: 1000
+    }), 10, true, finished => {
+      runOnJS(callback)('can pass arguments too');
     });
   };
 

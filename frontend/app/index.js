@@ -8,7 +8,6 @@ import {routes} from "./Routes.js";
 
 const ProviderWrapper = () => {
     return <Index routes={routes}/>
-    // return <View><Text>Hola</Text></View>
 }
 
 AppRegistry.registerComponent(appName, () => ProviderWrapper);

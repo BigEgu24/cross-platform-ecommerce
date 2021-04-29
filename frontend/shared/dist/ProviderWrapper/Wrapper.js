@@ -9,10 +9,7 @@ export default function Wrapper(props) {
   } = useAppContext();
   const {
     splash
-  } = values; // useEffect(() => {
-  //     console.log(splash)
-  // }, [splash])
-
+  } = values;
   return /*#__PURE__*/React.createElement(View, {
     style: styles.container
   }, splash ? /*#__PURE__*/React.createElement(SplashScreen, null) : /*#__PURE__*/React.createElement(Routes, {

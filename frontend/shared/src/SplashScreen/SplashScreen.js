@@ -6,7 +6,8 @@ import Animated, {
   useAnimatedStyle, 
   useDerivedValue, 
   withTiming,
-  runOnJS
+  runOnJS,
+  createWorklet
 } from 'react-native-reanimated';
 import React, {useEffect} from 'react';
 import { useAppContext } from '../Context/app-context';
@@ -20,13 +21,14 @@ const SplashScreen = () => {
   const animation = useSharedValue(0)
 
   const translate = useDerivedValue(() => {
-
+    
     return interpolate(animation.value,
       [0,360],
       [0,360])
   })
 
   const animationStyle = useAnimatedStyle(() => {
+
     return{
 
       transform:[
@@ -36,16 +38,18 @@ const SplashScreen = () => {
       ]
     }
   })
-  const startAnimation = () => {
+  function callback(text) {
+    console.log('Running on the RN thread', text);
+    setSplash(!splash);
+  }  
+  const startAnimation = (prop) => {
+    "worklet";
     animation.value = withRepeat(
-    withTiming(35, { duration: 1100 }),
-    -1,
-    false,
+    withTiming(35, { duration: 1000 }),
+    10,
+    true,
     (finished) => {
-      // const resultStr = finished
-      // ? 'All repeats are completed'
-      // : 'withRepeat cancelled';
-    console.log(finished);
+      runOnJS(callback)('can pass arguments too');
     }
     )
   }

@@ -1,1 +1,23 @@
-var _interopRequireWildcard=require("@babel/runtime/helpers/interopRequireWildcard");var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.default=Wrapper;var _react=_interopRequireWildcard(require("react"));var _reactNative=require("react-native");var _appContext=require("../Context/app-context");var _SplashScreen=_interopRequireDefault(require("../SplashScreen/SplashScreen"));var _Routes=_interopRequireDefault(require("../Routes/Routes"));var _jsxFileName="/Users/bigegu24/Desktop/react-crossplatform-ecommerce/frontend/shared/src/ProviderWrapper/Wrapper.js";function Wrapper(props){var _useAppContext=(0,_appContext.useAppContext)(),values=_useAppContext.values;var splash=values.splash;return _react.default.createElement(_reactNative.View,{style:styles.container,__self:this,__source:{fileName:_jsxFileName,lineNumber:20,columnNumber:9}},splash?_react.default.createElement(_SplashScreen.default,{__self:this,__source:{fileName:_jsxFileName,lineNumber:21,columnNumber:23}}):_react.default.createElement(_Routes.default,{Routes:props.routes,__self:this,__source:{fileName:_jsxFileName,lineNumber:21,columnNumber:42}}));}var styles=_reactNative.StyleSheet.create({container:{flex:1}});
+import React, { useEffect } from 'react';
+import { View, Text, ScrollView, SafeAreaView, StyleSheet } from 'react-native';
+import { useAppContext } from "../Context/app-context";
+import SplashScreen from "../SplashScreen/SplashScreen";
+import Routes from "../Routes/Routes";
+export default function Wrapper(props) {
+  const {
+    values
+  } = useAppContext();
+  const {
+    splash
+  } = values;
+  return /*#__PURE__*/React.createElement(View, {
+    style: styles.container
+  }, splash ? /*#__PURE__*/React.createElement(SplashScreen, null) : /*#__PURE__*/React.createElement(Routes, {
+    Routes: props.routes
+  }));
+}
+const styles = StyleSheet.create({
+  container: {
+    flex: 1
+  }
+});

@@ -13,9 +13,7 @@ import Routes from "../Routes/Routes";
 export default function Wrapper(props) {
     const { values } = useAppContext();
     const { splash } = values;
-    // useEffect(() => {
-    //     console.log(splash)
-    // }, [splash])
+    
     return (
         <View style={styles.container}>
             {splash ? <SplashScreen /> : <Routes Routes={props.routes}/>}
