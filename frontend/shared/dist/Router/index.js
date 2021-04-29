@@ -1,1 +1,1 @@
-Object.defineProperty(exports,"__esModule",{value:true});Object.defineProperty(exports,"Router",{enumerable:true,get:function get(){return _reactRouterNative.NativeRouter;}});Object.defineProperty(exports,"Route",{enumerable:true,get:function get(){return _reactRouterNative.Route;}});Object.defineProperty(exports,"Switch",{enumerable:true,get:function get(){return _reactRouterNative.Switch;}});var _reactRouterNative=require("react-router-native");
+export { NativeRouter as Router, Route, Switch } from "react-router-native";

@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.13.16",
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-react": "^7.13.13",
     "@react-native-community/eslint-config": "^2.0.0",
     "@wow/shared": "1.0.0",
     "babel-jest": "^26.6.3",
@@ -32,5 +34,14 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "babel": {
+    "presets": [
+      "module:metro-react-native-babel-preset",
+      "@babel/preset-react"
+    ],
+    "plugins": [
+      "react-native-reanimated/plugin"
+    ]
   }
 }

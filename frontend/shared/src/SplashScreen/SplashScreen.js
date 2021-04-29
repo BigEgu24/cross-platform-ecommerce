@@ -5,10 +5,11 @@ import Animated, {
   interpolate, 
   useAnimatedStyle, 
   useDerivedValue, 
-  withTiming 
+  withTiming,
+  runOnJS
 } from 'react-native-reanimated';
 import React, {useEffect} from 'react';
-import { useAppContext } from '@wow/shared/Context/app-context';
+import { useAppContext } from '../Context/app-context';
 
 
 const SplashScreen = () => {
@@ -18,11 +19,11 @@ const SplashScreen = () => {
 
   const animation = useSharedValue(0)
 
-  const rotation = useDerivedValue(() => {
+  const translate = useDerivedValue(() => {
 
     return interpolate(animation.value,
-      [0,200],
-      [0,200])
+      [0,360],
+      [0,360])
   })
 
   const animationStyle = useAnimatedStyle(() => {
@@ -30,31 +31,26 @@ const SplashScreen = () => {
 
       transform:[
         {
-          translateY: -rotation.value
+          translateY: -translate.value
         }
       ]
     }
   })
   const startAnimation = () => {
     animation.value = withRepeat(
-    withTiming(70, { duration: 1100 }, (finished, currentValue) => {
-      // if (finished) {
-      //   console.log('current withRepeat value is ' + currentValue);
-      // } else {
-      //   console.log('inner animation cancelled');
-      // }
-    }),
-    10,
-    true,
+    withTiming(35, { duration: 1100 }),
+    -1,
+    false,
     (finished) => {
-      if(finished === true){
-        setSplash(!splash)
-      }
+      // const resultStr = finished
+      // ? 'All repeats are completed'
+      // : 'withRepeat cancelled';
+    console.log(finished);
     }
     )
   }
   useEffect(() => {
-    startAnimation()
+    runOnJS(startAnimation)('can pass arguments too');
   }, [])
   
   const logo = { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" };
@@ -63,7 +59,6 @@ const SplashScreen = () => {
       <Animated.View style={animationStyle}>
         <Image source={logo} style={[styles.logo]}/>
       </Animated.View>
-      <Text style={{ color: '#fff' }}>{splash ? "Splash" : "Homepage"}</Text>
     </View>
   );
 }

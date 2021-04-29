@@ -1,1 +1,9 @@
-var _interopRequireDefault=require("@babel/runtime/helpers/interopRequireDefault");Object.defineProperty(exports,"__esModule",{value:true});exports.default=Index;var _react=_interopRequireDefault(require("react"));var _appContext=require("@wow/shared/Context/app-context");var _Wrapper=_interopRequireDefault(require("./Wrapper"));var _reactNative=require("react-native");var _jsxFileName="/Users/bigegu24/Desktop/react-crossplatform-ecommerce/frontend/shared/src/ProviderWrapper/Index.js";function Index(props){return _react.default.createElement(_reactNative.View,{__self:this,__source:{fileName:_jsxFileName,lineNumber:13,columnNumber:9}},_react.default.createElement(_reactNative.Text,{__self:this,__source:{fileName:_jsxFileName,lineNumber:14,columnNumber:13}},"Hello"));}
+import React from 'react';
+import { AppProvider } from "../Context/app-context";
+import Wrapper from "./Wrapper";
+import { View, Text } from "react-native";
+export default function Index(props) {
+  return /*#__PURE__*/React.createElement(AppProvider, null, /*#__PURE__*/React.createElement(Wrapper, {
+    routes: props.routes
+  }));
+}

@@ -1,1 +1,1 @@
-Object.defineProperty(exports,"__esModule",{value:true});Object.defineProperty(exports,"Router",{enumerable:true,get:function get(){return _reactRouterDom.BrowserRouter;}});Object.defineProperty(exports,"Route",{enumerable:true,get:function get(){return _reactRouterDom.Route;}});Object.defineProperty(exports,"Switch",{enumerable:true,get:function get(){return _reactRouterDom.Switch;}});var _reactRouterDom=require("react-router-dom");
+export { BrowserRouter as Router, Route, Switch } from "react-router-dom";
