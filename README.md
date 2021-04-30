@@ -10,7 +10,7 @@
 
 ✅ Shared API
 
-🛠️ Shared useContext
+🛠️ Shared useContext & useReducer
 
 🎨 Designed In Figma
 
@@ -20,8 +20,6 @@
 # App
 
 ⚛️ React Native
-
-🐬 MySQL
 
 🚀 Hermes Enabled
 
@@ -43,5 +41,7 @@
 # API
 
 ✅ Express
+
+🐬 MySQL
 
 📝 CRUD
