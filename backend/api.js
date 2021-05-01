@@ -20,9 +20,7 @@ app.get("/api/products", (req, res) => {
         if(err){
             console.log(err)
         }else{
-            res.json({
-                products: result
-            })
+            res.json(result)
         }
     })
 })
