@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppRegistry, StyleSheet, Text, View } from 'react-native';
-import Index from '@wow/shared/ProviderWrapper';
+import Index from '@wow/shared/ProviderWrapper/Index';
 import {routes} from "./Routes.js";
 import "./App.scss";
 

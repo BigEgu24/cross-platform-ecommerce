@@ -1,10 +1,11 @@
 import React from "react";
 import {View, Text} from "react-native";
+import Homepage from "./pages/Homepage/Homepage";
 
 export const routes = [
     {
       path: "/",
-      render: <View><Text>Home!</Text></View>
+      render: <Homepage />
     },
     {
       path: "/about",
