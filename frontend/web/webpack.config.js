@@ -41,13 +41,11 @@ module.exports = {
   ],
   module: {
     rules: [
+      
       {
-        test: /\.json$/,
-        loader: 'json-loader'
-      },
-      {
-        test: /\.(png|svg|jpg|jpe?g|gif|ico)$/,
+        test: /\.(png|svg|jpg|jpe?g|gif|ico|ttf)$/,
         loader: 'file-loader',
+        include: path.resolve(__dirname, "../../node_modules/react-native-vector-icons"),
         options: {
           name: '[path][name].[ext]',
           outputPath: 'images',

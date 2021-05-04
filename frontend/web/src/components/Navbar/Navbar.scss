@@ -1,0 +1,30 @@
+header{
+    .nav-belt{
+        align-items: center;
+        background-color: #001A31;
+        height: 77px;
+        color: #fff;
+        .start-section{
+            align-items: center;
+            .logo{
+                display: inherit;
+                height:100%;
+            }
+        }
+        .middle-section{
+            align-items: center;
+        }
+        .end-section{
+            align-items: center;
+        }
+    }
+    .nav-main{
+        align-items: center;
+        background-color: #0F3252;
+        height: 56px;
+        color: #fff;
+        a{
+            color: #fff;
+        }
+    }
+}
