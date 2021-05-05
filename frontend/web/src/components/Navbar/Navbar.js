@@ -23,7 +23,7 @@ export default function Navbar() {
                         </Link>
                     </div>
                     <div className="middle-section flex">
-                        <form className="search-form">
+                        <form className="search-form flex">
                             <input type="text" name=""/>
                             <button>
                                 <Icon name="search" size={30} color="#000" />
@@ -31,9 +31,17 @@ export default function Navbar() {
                         </form>
                     </div>
                     <div className="end-section flex">
-                    <Text>
-                        <Icon name="shopping-cart" size={30} color="#fff" />
-                    </Text>
+                        <ul className="listing flex">
+                            <li>
+                                <Link to="/sign-in">Sign in</Link>
+                            </li>
+                            <li className="cart-icon relative flex">
+                                <Link to="/shopping-cart" className="flex">
+                                    <Icon name="shopping-cart" size={30} color="#fff" />
+                                    <div className="counter absolute flex">1</div>
+                                </Link>
+                            </li>
+                        </ul>
                     </div>
                </Wrapper>
             </div> 
