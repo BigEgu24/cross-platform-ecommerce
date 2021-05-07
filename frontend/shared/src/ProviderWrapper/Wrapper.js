@@ -2,17 +2,19 @@ import React, {useEffect} from 'react';
 import {
     View,
     Text,
-    ScrollView,
+    Platform,
     SafeAreaView,
     StyleSheet,
+    StatusBar
 } from 'react-native';
 import { useAppContext } from "../Context/app-context";
 import SplashScreen from "../SplashScreen/SplashScreen";
 import Routes from "../Routes/Routes";
 
 export default function Wrapper(props) {
-    const { values } = useAppContext();
-    const { splash } = values;
+    const {utilsReducer} = useAppContext();
+    const {utils, utilsDispatch} = utilsReducer;
+    let splash = utils.splash;
     
     return (
         <View style={styles.container}>

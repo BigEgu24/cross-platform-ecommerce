@@ -5,20 +5,22 @@ header{
         height: 77px;
         color: #fff;
         flex-wrap: wrap;
-        div{
-            flex-grow: 1;
-            width: 25%;
-        }
+        justify-content: space-evenly;
         .start-section{
             align-items: center;
             .logo{
-                display: inherit;
+                display: flex;
                 height:100%;
             }
-        }
-        .middle-section{
-            align-items: center;
-            justify-content: center;
+            .primary-menu{
+                li{
+                    margin-inline-start: 1rem;
+                    a{
+                        color: #fff;
+                        font-size: 16px;
+                    }
+                }
+            }
             .search-form{
                 height: 40px;
                 width: 100%;
@@ -28,6 +30,7 @@ header{
                     border: 0;
                     border-top-left-radius: 3px;
                     border-bottom-left-radius: 3px;
+                    padding: 8px;
                 }
                 button{
                     height: 100%;
@@ -62,8 +65,8 @@ header{
                             align-items: center;
                             justify-content: center;
                             font-size: 12px!important;
-                            top: 0px;
-                            right: -2px;
+                            top: -4px;
+                            right: -3px;
                         }
                     }
                 }
@@ -77,6 +80,15 @@ header{
         color: #fff;
         a{
             color: #fff;
+        }
+        .address-section{
+            
+        }
+        .etc-links{
+            height: 100%;
+            font-size: 16px;
+            align-items: center;
+            justify-content: flex-end;
         }
     }
 }

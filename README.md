@@ -2,6 +2,9 @@
 
 ![Image of Yaktocat](/gifs/code.gif)
 
+Launch the site!
+[GitHub](http://github.com)
+
 # Project Specs
 
 🧶 Yarn Workspaces

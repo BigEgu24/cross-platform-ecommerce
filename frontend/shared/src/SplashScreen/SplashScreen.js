@@ -1,4 +1,4 @@
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet, StatusBar } from 'react-native';
 import Animated, {
   withRepeat,  
   useSharedValue, 
@@ -6,17 +6,17 @@ import Animated, {
   useAnimatedStyle, 
   useDerivedValue, 
   withTiming,
-  runOnJS,
-  createWorklet
+  runOnJS
 } from 'react-native-reanimated';
 import React, {useEffect} from 'react';
 import { useAppContext } from '../Context/app-context';
+import Logo from '../Logo/Logo';
 
 
 const SplashScreen = () => {
-  const {values, functions} = useAppContext();
-  const {splash} = values;
-  const {setSplash} = functions;
+  const {utilsReducer} = useAppContext();
+  const {UTILS_ACTIONS, utils, utilsDispatch} = utilsReducer;
+  let splash = utils.splash;
 
   const animation = useSharedValue(0)
 
@@ -38,18 +38,17 @@ const SplashScreen = () => {
       ]
     }
   })
-  function callback(text) {
-    console.log('Running on the RN thread', text);
-    setSplash(!splash);
+  function callback() {
+    utilsDispatch({ type: UTILS_ACTIONS.SET_SPLASH, payload: !splash })
   }  
   const startAnimation = (prop) => {
     "worklet";
     animation.value = withRepeat(
-    withTiming(35, { duration: 1000 }),
+    withTiming(50, { duration: 800 }),
     10,
     true,
     (finished) => {
-      runOnJS(callback)('can pass arguments too');
+      runOnJS(callback)();
     }
     )
   }
@@ -60,8 +59,13 @@ const SplashScreen = () => {
   const logo = { uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png" };
   return (
     <View style={styles.container}>
+      <StatusBar
+        animated={true}
+        backgroundColor="#000"
+        barStyle={"light-content"}
+      />
       <Animated.View style={animationStyle}>
-        <Image source={logo} style={[styles.logo]}/>
+        <Logo fill="#fff" height="60" width="60"/>
       </Animated.View>
     </View>
   );

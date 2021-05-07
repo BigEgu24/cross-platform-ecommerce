@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {getData} from "../axios/index";
-import reducer from '../Reducers/PostsReducer';
+import reducer from '../Reducers/ProductsReducer';
 
 const posts = (type) => {
     // Store posts state here and pass it down to the context

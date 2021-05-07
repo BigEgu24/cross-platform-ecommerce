@@ -1,11 +1,16 @@
 import React from 'react';
-import {View, Platform, StatusBar, StyleSheet} from 'react-native';
+import {
+    Platform, 
+    StatusBar, 
+    StyleSheet,
+    SafeAreaView
+} from 'react-native';
 import {Router, Route, Switch} from "../Router/index";
 
 export default function Routes(props) {
     const myRoutes = props.Routes;
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
             <Router>
                 <Switch>
                     {
@@ -17,11 +22,11 @@ export default function Routes(props) {
                     }
                 </Switch>
             </Router>
-        </View>
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
     container: {
-        paddingTop: Platform.OS==="web" ? 0 : StatusBar.currentHeight
+      flex: 1
     }
 })

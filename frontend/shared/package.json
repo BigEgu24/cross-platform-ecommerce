@@ -18,10 +18,12 @@
     "react-router-dom": "^5.2.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "react": "17.0.1",
     "react-native": "^0.64.0",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.0.0",
+    "react-native-svg": "^12.1.1",
     "react-router-native": "^5.2.0"
   }
 }

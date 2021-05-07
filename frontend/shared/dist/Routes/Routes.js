@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Platform, StatusBar, StyleSheet } from 'react-native';
+import { Platform, StatusBar, StyleSheet, SafeAreaView } from 'react-native';
 import { Router, Route, Switch } from "../Router/index";
 export default function Routes(props) {
   const myRoutes = props.Routes;
-  return /*#__PURE__*/React.createElement(View, {
+  return /*#__PURE__*/React.createElement(SafeAreaView, {
     style: styles.container
   }, /*#__PURE__*/React.createElement(Router, null, /*#__PURE__*/React.createElement(Switch, null, myRoutes.map((route, index) => {
     return /*#__PURE__*/React.createElement(Route, {
@@ -18,6 +18,6 @@ export default function Routes(props) {
 }
 const styles = StyleSheet.create({
   container: {
-    paddingTop: Platform.OS === "web" ? 0 : StatusBar.currentHeight
+    flex: 1
   }
 });

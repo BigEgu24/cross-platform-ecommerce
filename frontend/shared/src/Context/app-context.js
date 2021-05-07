@@ -3,6 +3,7 @@ import { getData } from "../utils/axios/index";
 import posts from "../utils/posts/posts";
 import { PRODUCTS_ACTIONS, productsReducer, productsState } from "../utils/Reducers/ProductsReducer";
 import { AUTH_ACTIONS, authReducer, authState } from "../utils/Reducers/AuthReducer";
+import { UTILS_ACTIONS, utilsReducer, utilsState } from "../utils/Reducers/UtilsReducer";
 
 const AppContext = React.createContext();
 
@@ -12,9 +13,9 @@ export function useAppContext() {
 
 
 export const AppProvider = (props) => {
-    const [splash, setSplash] = useState(true);
     const [products, productsDispatch] = useReducer(productsReducer, productsState)
     const [auth, authDispatch] = useReducer(authReducer, authState)
+    const [utils, utilsDispatch] = useReducer(utilsReducer, utilsState)
 
     useEffect(() => {
         const fetchData = async() => {
@@ -36,11 +37,10 @@ export const AppProvider = (props) => {
                 authDispatch,
                 auth
             },
-            functions: {
-                setSplash
-            },
-            values: {
-                splash
+            utilsReducer: {
+                UTILS_ACTIONS,
+                utilsDispatch,
+                utils
             }
         }}>
             {props.children}

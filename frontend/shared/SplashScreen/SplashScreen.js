@@ -1,19 +1,19 @@
-import { View, Image, StyleSheet, Text } from 'react-native';
-import Animated, { withRepeat, useSharedValue, interpolate, useAnimatedStyle, useDerivedValue, withTiming, runOnJS, createWorklet } from 'react-native-reanimated';
+import { View, Image, StyleSheet, StatusBar } from 'react-native';
+import Animated, { withRepeat, useSharedValue, interpolate, useAnimatedStyle, useDerivedValue, withTiming, runOnJS } from 'react-native-reanimated';
 import React, { useEffect } from 'react';
 import { useAppContext } from '../Context/app-context';
+import Logo from '../Logo/Logo';
 
 const SplashScreen = () => {
   const {
-    values,
-    functions
+    utilsReducer
   } = useAppContext();
   const {
-    splash
-  } = values;
-  const {
-    setSplash
-  } = functions;
+    UTILS_ACTIONS,
+    utils,
+    utilsDispatch
+  } = utilsReducer;
+  let splash = utils.splash;
   const animation = useSharedValue(0);
   const translate = useDerivedValue(() => {
     return interpolate(animation.value, [0, 360], [0, 360]);
@@ -26,18 +26,20 @@ const SplashScreen = () => {
     };
   });
 
-  function callback(text) {
-    console.log('Running on the RN thread', text);
-    setSplash(!splash);
+  function callback() {
+    utilsDispatch({
+      type: UTILS_ACTIONS.SET_SPLASH,
+      payload: !splash
+    });
   }
 
   const startAnimation = prop => {
     "worklet";
 
-    animation.value = withRepeat(withTiming(35, {
-      duration: 1000
+    animation.value = withRepeat(withTiming(50, {
+      duration: 800
     }), 10, true, finished => {
-      runOnJS(callback)('can pass arguments too');
+      runOnJS(callback)();
     });
   };
 
@@ -49,11 +51,16 @@ const SplashScreen = () => {
   };
   return /*#__PURE__*/React.createElement(View, {
     style: styles.container
-  }, /*#__PURE__*/React.createElement(Animated.View, {
+  }, /*#__PURE__*/React.createElement(StatusBar, {
+    animated: true,
+    backgroundColor: "#000",
+    barStyle: "light-content"
+  }), /*#__PURE__*/React.createElement(Animated.View, {
     style: animationStyle
-  }, /*#__PURE__*/React.createElement(Image, {
-    source: logo,
-    style: [styles.logo]
+  }, /*#__PURE__*/React.createElement(Logo, {
+    fill: "#fff",
+    height: "60",
+    width: "60"
   })));
 };
 
