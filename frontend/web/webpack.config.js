@@ -5,19 +5,16 @@ const path = require('path');
 require("@babel/polyfill");
 
 module.exports = {
+  watch: true,
   mode: 'development',
   entry: [
     '@babel/polyfill', 
     './src/index.js'
   ],
   output: {
+    publicPath: '/',
     path: path.resolve(__dirname, 'build'),
     filename: 'app.bundle.js'
-  },
-  devServer: {
-      historyApiFallback:{
-        index: 'build/index.html'
-      },
   },
   plugins: [
     new HtmlWebpackPlugin({

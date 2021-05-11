@@ -10,7 +10,7 @@
   "scripts": {
     "api": "nodemon ./backend/api.js",
     "dev-app": "concurrently \"cd ./frontend/app && yarn android && yarn ios\"",
-    "dev-web": "concurrently \"cd ./frontend/web && yarn start\"",
+    "dev-web": "concurrently \"cd ./backend && nodemon site.js \" \"cd ./frontend/web && yarn build\" ",
     "start": "concurrently \"yarn dev-app && yarn dev-web\"",
     "clean": "rm -rf node_modules && rm -rf frontend/*/node_modules",
     "release": "standard-version"

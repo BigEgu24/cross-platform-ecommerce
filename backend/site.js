@@ -4,8 +4,10 @@ const app = express();
 
 const port = 8000;
 
+app.use(express.static('../frontend/web/build'));
+
 app.get("/*", function(req, res){
-    res.sendFile(path.join(__dirname, '../frontend/web/public', 'index.html'))
+    res.sendFile(path.join(__dirname, '../frontend/web/build', 'index.html'))
 })
 
 app.listen(port, () => {
