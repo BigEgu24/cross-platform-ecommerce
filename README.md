@@ -21,6 +21,7 @@ Launch the site!
 
 💳 Stripe Payments
 
+🔒 Multi-layered Encryption
 
 # App
 
