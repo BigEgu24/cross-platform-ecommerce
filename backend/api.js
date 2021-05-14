@@ -60,6 +60,6 @@ app.post("/api/product/get", (req, res) => {
 // console.log(hash)
 
 
-app.listen(process.env.API_PORT, () => {
+app.listen(process.env.PORT || process.env.API_PORT, () => {
     console.log(`Example app listening at http://localhost:${process.env.API_PORT}`)
 })
