@@ -9,9 +9,11 @@ Launch the site!
 
 🧶 Yarn Workspaces
 
-✅ Shared React Native Web Components
+✅ Shared Components
 
 ✅ Shared API
+
+✅ Shared Environment Variables
 
 🛠️ Shared useContext & useReducer
 
@@ -40,6 +42,8 @@ Launch the site!
 ✅ Express
 
 🎨 SASS enabled
+
+🔒 Javascript Obfuscation
 
 # API
 

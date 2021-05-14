@@ -1,15 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet} from "react-native";
+import {View, Text, StyleSheet, Platform} from "react-native";
 import Svg,{
     Path,
     Polygon,
     G
 } from 'react-native-svg';
 
+export const Store = ({store}) => {
+    return (
+        <View>
+            <Text style={styles.store}>{store}</Text>
+        </View>
+    )
+}
+
 export const Title = ({title}) => {
     return (
         <View>
-            <Text>{title}</Text>
+            <Text style={styles.title}>{title}</Text>
         </View>
     )
 }
@@ -17,7 +25,7 @@ export const Title = ({title}) => {
 export const Price = ({price}) => {
     return (
         <View>
-            <Text>{price.toFixed(2)}</Text>
+            <Text style={styles.price}>${price.toFixed(2)}</Text>
         </View>
     )
 }
@@ -78,6 +86,9 @@ const styles = StyleSheet.create({
     container: {
         width: 230,
         maxWidth: 230
+    },
+    title: {
+        fontSize: Platform.OS==="web" ? 24 : 18
     },
     ratings: {
         display: 'flex',

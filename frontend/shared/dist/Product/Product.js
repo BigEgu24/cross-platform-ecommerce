@@ -1,15 +1,26 @@
 import React from 'react';
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, Platform } from "react-native";
 import Svg, { Path, Polygon, G } from 'react-native-svg';
+export const Store = ({
+  store
+}) => {
+  return /*#__PURE__*/React.createElement(View, null, /*#__PURE__*/React.createElement(Text, {
+    style: styles.store
+  }, store));
+};
 export const Title = ({
   title
 }) => {
-  return /*#__PURE__*/React.createElement(View, null, /*#__PURE__*/React.createElement(Text, null, title));
+  return /*#__PURE__*/React.createElement(View, null, /*#__PURE__*/React.createElement(Text, {
+    style: styles.title
+  }, title));
 };
 export const Price = ({
   price
 }) => {
-  return /*#__PURE__*/React.createElement(View, null, /*#__PURE__*/React.createElement(Text, null, price.toFixed(2)));
+  return /*#__PURE__*/React.createElement(View, null, /*#__PURE__*/React.createElement(Text, {
+    style: styles.price
+  }, "$", price.toFixed(2)));
 };
 
 function IconStar(props) {
@@ -56,6 +67,9 @@ const styles = StyleSheet.create({
   container: {
     width: 230,
     maxWidth: 230
+  },
+  title: {
+    fontSize: Platform.OS === "web" ? 24 : 18
   },
   ratings: {
     display: 'flex',

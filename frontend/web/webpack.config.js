@@ -1,28 +1,40 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const WebpackObfuscator = require('webpack-obfuscator');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 require("@babel/polyfill");
 
 module.exports = {
   watch: true,
-  mode: 'development',
+  mode: 'production',
   entry: [
     '@babel/polyfill', 
     './src/index.js'
   ],
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
+  },
   output: {
     publicPath: '/',
     path: path.resolve(__dirname, 'build'),
     filename: 'app.bundle.js'
   },
   plugins: [
+    new webpack.DefinePlugin({
+      process: {
+        env: {}
+      }
+    }),
+    // new WebpackObfuscator ({
+    //   rotateStringArray: false
+    // }, ['app_bundle.js']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './public/index.html',
       favicon: './public/favicon.ico'
     }),
-    new webpack.DefinePlugin({ process: { env: {} } }),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -51,17 +63,43 @@ module.exports = {
       },
       {
         test: /\.(js|jsx)$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              "@babel/preset-env",
-              '@babel/preset-react',
-              { plugins: ['@babel/plugin-proposal-class-properties', 'react-native-reanimated/plugin'] }
-            ],
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: [
+                "@babel/preset-env",
+                '@babel/preset-react',
+                { plugins: 
+                  ['@babel/plugin-proposal-class-properties', 
+                  ["module:react-native-dotenv", {
+                    "moduleName": "@env",
+                    "path": path.resolve(__dirname, "../shared/.env"),
+                    "blacklist": null,
+                    "whitelist": null,
+                    "safe": false,
+                    "allowUndefined": true
+                  }],
+                  'react-native-reanimated/plugin'
+                ] }
+              ],
+            },
           },
-        },
+          
+        ],
       },
+      // {
+      //   test: /\.js$/,
+      //   enforce: 'post',
+      //   use: [
+      //     {
+      //       loader: WebpackObfuscator.loader,
+      //       options: {
+      //         rotateStringArray: false,
+      //       }
+      //     }
+      //   ],
+      // },
       {
         test: /\.s[ac]ss$/i,
         use: [

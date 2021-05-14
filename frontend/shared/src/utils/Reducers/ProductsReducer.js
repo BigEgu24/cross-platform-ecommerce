@@ -8,7 +8,7 @@ export const productsState = {
   products: [],
   search: [],
   product: {
-    department: '',
+    id: '',
     title: '',
     price: 0.00,
     rating: 0

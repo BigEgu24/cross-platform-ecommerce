@@ -1,8 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 import Svg,{
-    Path,
-    
+    Path
 } from 'react-native-svg';
 
 export default function Logo(props) {

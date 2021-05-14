@@ -1,8 +1,8 @@
 const express = require("express");
+//const crypto = require("crypto");
 const mysql = require("mysql");
 var cors = require('cors')
 const app = express();
-const port = 3000;
 require('dotenv').config()
 
 const db = mysql.createConnection({
@@ -13,7 +13,13 @@ const db = mysql.createConnection({
 })
 // Allow Access to API
 app.use(cors())
+// Allow API to use JSON
+app.use(express.urlencoded({ extended: true }))
+ 
+// parse application/json
+app.use(express.json())
 
+// Routes
 // Get All The Products
 app.get("/api/products", (req, res) => {
     db.query("SELECT * FROM products", (err, result) => {
@@ -36,6 +42,24 @@ app.get("/api/products/insert", (req, res) => {
     })
 })
 
-app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+// Get Product Department
+app.post("/api/product/get", (req, res) => {
+    
+    db.query(`SELECT * FROM products WHERE id='${req.body.id}'`, (err, result) => {
+        if(err){
+            console.log(err)
+        }else{
+            res.json(result)
+        }
+    })
+})
+
+// Hashing
+// const secret = '123456';
+// const hash = crypto.createHmac('sha256', secret).update('Welcome to the jungle').digest('hex');
+// console.log(hash)
+
+
+app.listen(process.env.API_PORT, () => {
+    console.log(`Example app listening at http://localhost:${process.env.API_PORT}`)
 })

@@ -18,7 +18,8 @@ export default function Wrapper(props) {
     
     return (
         <View style={styles.container}>
-            {splash ? <SplashScreen /> : <Routes Routes={props.routes}/>}
+            {/* {splash ? <SplashScreen /> : <Routes Routes={props.routes}/>} */}
+            <Routes Routes={props.routes}/>
         </View>
     )
 }

@@ -3,11 +3,11 @@ export const AUTH_ACTIONS = {
 };
 export const authState = {
   auth: {
-    fname: 'Eduardo',
-    lname: 'Gutierrez',
-    email: 'bigegu24@gmail.com',
-    address_one: '201 S Pennsylvania Ave SPC 20',
-    address_two: 'San Bernardino, CA 92410'
+    fname: '',
+    lname: '',
+    email: '',
+    address_one: '',
+    address_two: ''
   }
 };
 export const authReducer = (state, action) => {

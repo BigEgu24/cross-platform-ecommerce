@@ -1,6 +1,6 @@
 import React from "react";
-import {View, Text} from "react-native";
 import Homepage from "./pages/Homepage/Homepage";
+import ProductPage from "./pages/ProductPage/ProductPage";
 
 export const routes = [
     {
@@ -8,7 +8,15 @@ export const routes = [
       render: <Homepage />
     },
     {
-      path: "/about",
-      render: <View><Text>About!</Text></View>
+      path: "/product-page/",
+      render: <ProductPage />
+    },
+    {
+      path: "/product-page/",
+      render: <ProductPage />
+    },
+    {
+      path: "/product-page/dp/:productID",
+      render: <ProductPage />
     }
 ];

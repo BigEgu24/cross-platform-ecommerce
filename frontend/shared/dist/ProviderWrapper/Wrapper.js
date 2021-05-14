@@ -14,7 +14,7 @@ export default function Wrapper(props) {
   let splash = utils.splash;
   return /*#__PURE__*/React.createElement(View, {
     style: styles.container
-  }, splash ? /*#__PURE__*/React.createElement(SplashScreen, null) : /*#__PURE__*/React.createElement(Routes, {
+  }, /*#__PURE__*/React.createElement(Routes, {
     Routes: props.routes
   }));
 }

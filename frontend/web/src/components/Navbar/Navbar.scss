@@ -5,11 +5,12 @@ header{
         height: 77px;
         color: #fff;
         flex-wrap: wrap;
-        justify-content: space-evenly;
         .start-section{
             align-items: center;
+            width: auto;
+            flex-grow: 1;
             .logo{
-                display: flex;
+                display: inherit;
                 height:100%;
             }
             .primary-menu{
@@ -21,23 +22,30 @@ header{
                     }
                 }
             }
+        }
+        .middle-section{
+            align-items: center;
+            justify-content: center;
+            flex-grow: 3;
             .search-form{
                 height: 40px;
                 width: 100%;
+                border-radius: 3px;
+                overflow: hidden;
+                &:focus-within{
+                    //border: 3px solid #E9C64A;
+                    box-shadow: 0 0 0 2px #E9C64A, 0 0 0 3px #c1a43d;
+                }
                 input{
                     height: 100%;
                     width: calc(100% - 45px);
                     border: 0;
-                    border-top-left-radius: 3px;
-                    border-bottom-left-radius: 3px;
                     padding: 8px;
                 }
                 button{
                     height: 100%;
                     width: 45px;
                     border: 0;
-                    border-top-right-radius: 3px;
-                    border-bottom-right-radius: 3px;
                     background-color: #E9C64A;
                 }
             }
@@ -45,6 +53,7 @@ header{
         .end-section{
             align-items: center;
             justify-content: flex-end;
+            flex-grow: 1;
             .listing{
                 width: auto;
                 li{

@@ -21,9 +21,11 @@
     "axios": "^0.21.1",
     "react": "17.0.1",
     "react-native": "^0.64.0",
+    "react-native-dotenv": "^2.5.5",
     "react-native-gesture-handler": "^1.10.3",
     "react-native-reanimated": "^2.0.0",
     "react-native-svg": "^12.1.1",
+    "react-native-vector-icons": "^8.1.0",
     "react-router-native": "^5.2.0"
   }
 }
