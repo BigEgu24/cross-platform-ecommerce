@@ -1,12 +1,9 @@
 import React from 'react';
 import axios from "axios";
-export const postData = (url, data) => {
+export const postData = async (url, payload) => {
   // axios post
-  axios.post(url, data).then(function (response) {
-    console.log(response);
-  }).catch(function (error) {
-    console.log(error);
-  });
+  const data = await axios.post(url, payload);
+  return data.data;
 };
 export const getData = async url => {
   // axios post

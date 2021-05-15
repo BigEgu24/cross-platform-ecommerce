@@ -20,10 +20,11 @@ export default function ProductPage() {
         products,
         productsDispatch
     } = productsReducer;
-    let selectedProduct = products.product;
+    var selectedProduct = products.product;
 
     const awaitDep = async() => {
         const data = await getProductInfo(productID)
+        getProductInfo(productID)
         
         let payload = {
             id: data[0].id,
@@ -32,17 +33,19 @@ export default function ProductPage() {
             rating: data[0].rating
         }
         
+        
         productsDispatch({ type: PRODUCTS_ACTIONS.SELECTED_PRODUCT, payload: payload })
+        //console.log(selectedProduct)
     }
+
     useEffect(() => {
         awaitDep()
     }, [])
+    
     const {api, token} = dotenv();
-    console.log(api)
-    console.log(token)
     // AMAZON DP Stands for details page in the url
     // AMAZON GP Stands for general products page in the url.
-    
+    //console.log(selectedProduct)
 
     return (
         <>
@@ -51,10 +54,10 @@ export default function ProductPage() {
                 <Column>
                     {/* <Department department={productListing.department}/> */}
                     {/* {selectedProduct.store ? selectedProduct.store : ''} */}
-                    <Title title={selectedProduct.title}/>
-                    <Price price={selectedProduct.price}/>
-                    {selectedProduct.rating===0 ? '' : `${selectedProduct.rating} out of 5` || "N/A" }
-                    {selectedProduct.rating===0 ? '' : <Ratings rating={selectedProduct.rating}/>}
+                    {/* <Title title={selectedProduct.title}/> */}
+                    {/* <Price price={selectedProduct.price}/> */}
+                    {/* {selectedProduct.rating3 ? '' : `${selectedProduct.rating} out of 5` || "N/A" } */}
+                    {/* {selectedProduct.rating3 ? '' : <Ratings rating={selectedProduct.rating}/> } */}
                     
                 </Column>
             </Wrapper>

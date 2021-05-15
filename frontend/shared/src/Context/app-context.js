@@ -17,8 +17,7 @@ export const AppProvider = (props) => {
     const [auth, authDispatch] = useReducer(authReducer, authState)
     const [utils, utilsDispatch] = useReducer(utilsReducer, utilsState)
     const {api, token} = dotenv();
-    console.log(api)
-    console.log(token)
+    
 
     useEffect(() => {
         const fetchData = async() => {
@@ -27,6 +26,7 @@ export const AppProvider = (props) => {
         }
         fetchData()
     }, [])
+    //console.log(products.products)
     
     return(
         <AppContext.Provider value={{

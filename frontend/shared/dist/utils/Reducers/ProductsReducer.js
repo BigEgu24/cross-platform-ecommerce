@@ -9,7 +9,7 @@ export const productsState = {
   product: {
     id: '',
     title: '',
-    price: 0.00,
+    price: 0,
     rating: 0
   }
 };

@@ -16,8 +16,6 @@ export const AppProvider = props => {
     api,
     token
   } = dotenv();
-  console.log(api);
-  console.log(token);
   useEffect(() => {
     const fetchData = async () => {
       const data = await getData(`${api}/api/products/`);
@@ -28,7 +26,8 @@ export const AppProvider = props => {
     };
 
     fetchData();
-  }, []);
+  }, []); //console.log(products.products)
+
   return /*#__PURE__*/React.createElement(AppContext.Provider, {
     value: {
       productsReducer: {

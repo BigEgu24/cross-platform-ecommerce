@@ -8,7 +8,7 @@ require("@babel/polyfill");
 
 module.exports = {
   watch: true,
-  mode: 'production',
+  mode: 'development',
   entry: [
     '@babel/polyfill', 
     './src/index.js'

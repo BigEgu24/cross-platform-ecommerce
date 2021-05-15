@@ -10,12 +10,13 @@ export const productsState = {
   product: {
     id: '',
     title: '',
-    price: 0.00,
+    price: 0,
     rating: 0
   }
 }
 
 export const productsReducer = (state, action) => {
+  
   switch (action.type) {
       case 'SET_PRODUCTS':
           return {products: action.payload}
