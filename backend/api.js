@@ -4,7 +4,7 @@ const mysql = require("mysql");
 var cors = require('cors');
 const path = require('path');
 const app = express();
-require('dotenv').config({ path: path.resolve(__dirname, '/.env') })
+require('dotenv').config({ path: __dirname + '/.env' })
 const PORT = 3000;
 
 // const db = mysql.createConnection({
@@ -26,15 +26,15 @@ app.use(express.json())
 
 // Routes
 // Get All The Products
-app.get("/api/products", (req, res) => {
-    db.query("SELECT * FROM products", (err, result) => {
-        if(err){
-            console.log(err)
-        }else{
-            res.json(result)
-        }
-    })
-})
+// app.get("/api/products", (req, res) => {
+//     db.query("SELECT * FROM products", (err, result) => {
+//         if(err){
+//             console.log(err)
+//         }else{
+//             res.json(result)
+//         }
+//     })
+// })
 
 // // Insert Product
 // app.get("/api/products/insert", (req, res) => {
