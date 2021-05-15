@@ -14,7 +14,7 @@ const db = mysql.createConnection({
 })
 db.connect();
 
-// Allow Access to API b64f5b78fe25ad@us-cdbr-east-03.cleardb.com:3306
+// Allow Access to API b64f5b78fe25ad@us-cdbr-east-03.cleardb.com:3306 .
 app.use(cors())
 // Allow API to use JSON
 app.use(express.urlencoded({ extended: true }))
