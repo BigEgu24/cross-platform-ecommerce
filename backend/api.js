@@ -54,8 +54,7 @@ app.post("/api/product/get", (req, res) => {
         if(err){
             console.log(err)
         }else{
-            //res.json(result)
-            console.log(result[0])
+            res.json(result[0])
         }
     })
 })
