@@ -1,9 +1,10 @@
 const express = require("express");
 //const crypto = require("crypto");
 const mysql = require("mysql");
-var cors = require('cors')
+var cors = require('cors');
+const path = require('path');
 const app = express();
-require('dotenv').config()
+require('dotenv').config({ path: path.resolve(__dirname, '/.env') })
 const PORT = 3000;
 
 // const db = mysql.createConnection({
