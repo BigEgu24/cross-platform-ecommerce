@@ -12,8 +12,9 @@ const db = mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
 })
+db.connect();
 
-// Allow Access to API
+// Allow Access to API b64f5b78fe25ad@us-cdbr-east-03.cleardb.com:3306
 app.use(cors())
 // Allow API to use JSON
 app.use(express.urlencoded({ extended: true }))
