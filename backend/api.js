@@ -13,7 +13,7 @@ const PORT = 3000;
 //     database: process.env.DB_NAME
 // })
 // db.connect();
-consol.log(process.env.DB_USER)
+console.log(process.env.DB_USER)
 // Allow Access to API b64f5b78fe25ad@us-cdbr-east-03.cleardb.com:3306 .
 app.use(cors())
 // Allow API to use JSON
