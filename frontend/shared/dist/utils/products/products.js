@@ -10,7 +10,6 @@ export const getProductInfo = async id => {
       id: id
     };
     const data = await postData(`${api}/api/product/get`, payload);
-    console.log(data);
     return data;
   } catch (error) {
     return error;

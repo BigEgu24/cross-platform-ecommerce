@@ -7,7 +7,7 @@ export const getProductInfo = async(id) => {
         let { api } = dotenv()
         let payload = { id: id };
         const data = await postData(`${api}/api/product/get`, payload);
-        console.log(data)
+        
         return data;
     } catch (error) {
         return error;

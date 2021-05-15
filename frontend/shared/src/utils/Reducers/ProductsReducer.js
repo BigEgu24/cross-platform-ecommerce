@@ -19,11 +19,20 @@ export const productsReducer = (state, action) => {
   
   switch (action.type) {
       case 'SET_PRODUCTS':
-          return {products: action.payload}
+          return {
+            ...state,
+            products: action.payload
+          }
       case 'SELECTED_PRODUCT':
-        return {product: action.payload}
+        return {
+          ...state,
+          product: action.payload
+        }
       case 'SEARCH_PROD':
-        return {search: action.payload}
+        return {
+          ...state,
+          search: action.payload
+        }
       default:
         return state;
   }

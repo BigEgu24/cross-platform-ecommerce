@@ -22,30 +22,27 @@ export default function ProductPage() {
     } = productsReducer;
     var selectedProduct = products.product;
 
-    const awaitDep = async() => {
-        const data = await getProductInfo(productID)
-        getProductInfo(productID)
-        
-        let payload = {
-            id: data[0].id,
-            title: data[0].title,
-            price: data[0].price,
-            rating: data[0].rating
-        }
-        
-        
-        productsDispatch({ type: PRODUCTS_ACTIONS.SELECTED_PRODUCT, payload: payload })
-        //console.log(selectedProduct)
-    }
-
     useEffect(() => {
+        const awaitDep = async() => {
+            const data = await getProductInfo(productID)
+            // console.log(data)
+            let payload = {
+                id: data.id,
+                title: data.title,
+                price: data.price,
+                rating: data.rating
+            }
+            
+            productsDispatch({ type: PRODUCTS_ACTIONS.SELECTED_PRODUCT, payload: payload })
+        }
         awaitDep()
     }, [])
     
     const {api, token} = dotenv();
     // AMAZON DP Stands for details page in the url
     // AMAZON GP Stands for general products page in the url.
-    //console.log(selectedProduct)
+    console.log(selectedProduct)
+    //console.log(products)
 
     return (
         <>
@@ -54,10 +51,10 @@ export default function ProductPage() {
                 <Column>
                     {/* <Department department={productListing.department}/> */}
                     {/* {selectedProduct.store ? selectedProduct.store : ''} */}
-                    {/* <Title title={selectedProduct.title}/> */}
-                    {/* <Price price={selectedProduct.price}/> */}
-                    {/* {selectedProduct.rating3 ? '' : `${selectedProduct.rating} out of 5` || "N/A" } */}
-                    {/* {selectedProduct.rating3 ? '' : <Ratings rating={selectedProduct.rating}/> } */}
+                    <Title title={selectedProduct.title}/>
+                    <Price price={selectedProduct.price}/>
+                    {`${selectedProduct.rating} out of 5` || "N/A" }
+                    <Ratings rating={selectedProduct.rating}/> 
                     
                 </Column>
             </Wrapper>
