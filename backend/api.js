@@ -4,7 +4,7 @@ const mysql = require("mysql");
 var cors = require('cors');
 const path = require('path');
 const app = express();
-require('dotenv').config({ path: __dirname + '/../.env' })
+require('dotenv').config({ path: path.resolve(__dirname + '/../.env') })
 const PORT = 3000;
 
 // const db = mysql.createConnection({
