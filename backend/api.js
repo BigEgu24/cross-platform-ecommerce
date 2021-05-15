@@ -11,6 +11,7 @@ const db = mysql.createConnection({
     password: process.env.DB_PASS,
     database: process.env.DB_NAME
 })
+db.connect();
 // Allow Access to API
 app.use(cors())
 // Allow API to use JSON
@@ -18,6 +19,7 @@ app.use(express.urlencoded({ extended: true }))
  
 // parse application/json
 app.use(express.json())
+
 
 // Routes
 // Get All The Products
