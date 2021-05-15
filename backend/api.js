@@ -4,6 +4,7 @@ const mysql = require("mysql");
 var cors = require('cors')
 const app = express();
 require('dotenv').config()
+const PORT = 3000;
 
 const db = mysql.createConnection({
     user: process.env.DB_USER,
@@ -62,6 +63,6 @@ app.post("/api/product/get", (req, res) => {
 // console.log(hash)
 
 // process.env.PORT is for Heroku and process.env.PORT is for development
-app.listen(process.env.PORT || process.env.API_PORT, () => {
-    console.log(`API running on port ${process.env.PORT || process.env.API_PORT}`)
+app.listen(process.env.PORT || PORT, () => {
+    console.log(`API running on port ${PORT}`)
 })
