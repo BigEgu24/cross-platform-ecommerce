@@ -59,7 +59,7 @@ app.post("/api/product/get", (req, res) => {
 // const hash = crypto.createHmac('sha256', secret).update('Welcome to the jungle').digest('hex');
 // console.log(hash)
 
-
+// process.env.PORT is for Heroku and process.env.PORT is for development
 app.listen(process.env.PORT || process.env.API_PORT, () => {
-    console.log(`Example app listening at http://localhost:${process.env.API_PORT}`)
+    console.log(`API running on port ${process.env.PORT || process.env.API_PORT}`)
 })
