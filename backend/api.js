@@ -65,5 +65,5 @@ app.post("/api/product/get", (req, res) => {
 
 // process.env.PORT is for Heroku and process.env.PORT is for development
 app.listen(process.env.PORT || PORT, () => {
-    console.log(`API running on port ${PORT}`)
+    console.log(`API running on port ${process.env.PORT || PORT}`)
 })
