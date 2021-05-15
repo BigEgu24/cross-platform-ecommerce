@@ -6,14 +6,14 @@ const app = express();
 require('dotenv').config()
 const PORT = 3000;
 
-const db = mysql.createConnection({
-    user: process.env.DB_USER,
-    host: process.env.DB_HOST,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME
-})
-db.connect();
-
+// const db = mysql.createConnection({
+//     user: process.env.DB_USER,
+//     host: process.env.DB_HOST,
+//     password: process.env.DB_PASS,
+//     database: process.env.DB_NAME
+// })
+// db.connect();
+consol.log(process.env.DB_USER)
 // Allow Access to API b64f5b78fe25ad@us-cdbr-east-03.cleardb.com:3306 .
 app.use(cors())
 // Allow API to use JSON
@@ -35,28 +35,28 @@ app.get("/api/products", (req, res) => {
     })
 })
 
-// Insert Product
-app.get("/api/products/insert", (req, res) => {
-    db.query("INSERT INTO products (id, title) VALUES ('5', 'hello')", (err, result) => {
-        if(err){
-            console.log(err)
-        }else{
-            res.send("Product Saved!")
-        }
-    })
-})
+// // Insert Product
+// app.get("/api/products/insert", (req, res) => {
+//     db.query("INSERT INTO products (id, title) VALUES ('5', 'hello')", (err, result) => {
+//         if(err){
+//             console.log(err)
+//         }else{
+//             res.send("Product Saved!")
+//         }
+//     })
+// })
 
-// Get Product Department
-app.post("/api/product/get", (req, res) => {
+// // Get Product Department
+// app.post("/api/product/get", (req, res) => {
     
-    db.query(`SELECT * FROM products WHERE id='${req.body.id}'`, (err, result) => {
-        if(err){
-            console.log(err)
-        }else{
-            res.json(result)
-        }
-    })
-})
+//     db.query(`SELECT * FROM products WHERE id='${req.body.id}'`, (err, result) => {
+//         if(err){
+//             console.log(err)
+//         }else{
+//             res.json(result)
+//         }
+//     })
+// })
 
 // Hashing
 // const secret = '123456';
